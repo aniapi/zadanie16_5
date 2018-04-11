@@ -4,31 +4,42 @@ import style from './App.css';
 import Title from '../components/Title.js';
 
 class App extends React.Component {
-    constructor(props){
+
+    constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [{
+                id: 1,
+                    text: 'zadanie 1'
+                }, {
+                id: 2,
+                    text: 'zadanie 2'
+                }
+            ]
         };
     }
-    addTodo(val){
-        const todo = {
-            text: val,
-            id: uuid.v4(),
-        };
-        const data = [...this.state.data, todo];
-        this.setState({data});
+
+        addTodo(val) {
+            const todo = {
+                text: val,
+                id: uuid.v4(),
+            };
+            const data = [...this.state.data, todo];
+            this.setState({data});
+        }
+
+        removeTodo(id) {
+            const remainder = this.state.data.filter(todo => todo.id !== id);
+            this.setState({data: remainder});
+        }
+
+    render() {
+        return (
+            <div className={style.TodoApp}>
+                <Title title="Lista zadań" number={this.state.data.length} />
+            </div>
+        );
     }
-    removeTodo(id) {
-    const remainder = this.state.data.filter(todo => todo.id !== id);
-    this.setState({data: remainder});
-	}
-	render() {
-	    return (
-	        <div className={style.TodoApp}>
-	            <Title />
-	        </div>
-	    );
-	}
 }
 
 export default App;
