@@ -2,6 +2,7 @@ import React from 'react';
 import uuid from 'uuid';
 import style from './App.css';
 import Title from '../components/Title.js';
+import TodoList from '../components/TodoList.js';
 
 class App extends React.Component {
 
@@ -37,6 +38,7 @@ class App extends React.Component {
         return (
             <div className={style.TodoApp}>
                 <Title title="Lista zadań" number={this.state.data.length} />
+             // <TodoList />
             </div>
         );
     }
