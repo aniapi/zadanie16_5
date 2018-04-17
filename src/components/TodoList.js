@@ -11,14 +11,14 @@ const Todo = ({item, removeItem}) => {
 }
 
 const TodoList = ({tasks, remove}) => {  
- 	const todo = tasks.map(
+ 	const todoList = tasks.map(
  		task => {
  			return <Todo item={task} removeItem={remove} key={task.id} />
  		} 
  	)
 	return(
 		<ul>
-			<Todo />
+            {todoList}
 		</ul>
 	)
 }
