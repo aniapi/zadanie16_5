@@ -11,13 +11,17 @@ class App extends React.Component {
         this.state = {
             data: [{
                 id: 1,
-                    text: 'zadanie 1'
+                    text: 'clean room'
                 }, {
                 id: 2,
-                    text: 'zadanie 2'
+                    text: 'wash the dishes'
+                }, {
+                id: 3,
+                    text: 'feed my cat'
                 }
             ]
         };
+        this.removeTodo = this.removeTodo.bind(this);
     }
 
         addTodo(val) {
