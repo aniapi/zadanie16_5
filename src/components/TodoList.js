@@ -18,7 +18,11 @@ const TodoList = ({tasks, remove}) => {
  	)
 	return(
 		<ul>
+<<<<<<< HEAD
 			{todoList}
+=======
+            {todoList}
+>>>>>>> 27ab337fd85bcf7d4a88d9c6cddfd2af52f499bf
 		</ul>
 	)
 }
